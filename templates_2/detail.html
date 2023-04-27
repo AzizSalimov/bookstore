@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <img src="{{ book.image.url }}" class="img-fluid" alt="{{ book.title }}">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ book.title }}</h2>
+                        <h3 class="card-subtitle mb-2 text-muted">{{ book.category.name }}</h3>
+                        <p class="card-text">{{ book.description }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: {{ book.price }}</li>
+                            <li class="list-group-item">Author: {{ object.author }}</li>
+                            <li class="list_group_item">Quantity: {{ book.quantity }}</li>
+                            <li class="list-group-item">Discription: {{ object.description }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <p><a href="{{ object.follow_author }}">Follow Author</a></p>
+    <p>Price: $ {{ object.price|floatformat:2 }}</p>
+
+
+
+    {% if object.book_available is True %}
+        <a href="{% url 'checkout' object.pk %}" class="btn btn-outline-success" role="button">Buy Now</a>
+    {% else %}
+        <h4 class="text-danger">Out of Stock!</h4>
+    {% endif %}
+
+{% endblock content %}

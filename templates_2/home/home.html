@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KITOB UZ</title>
+    <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+</head>
+<body>
+
+
+<div class="hero">
+    <nav>
+        <h1 id="logo">Aziz Salimov<i class="bx bxl-graphql"></i></h1>
+        <ul>
+            <li><a href="{% url 'bookstore' %}">HOME</a></li>
+            <li><a href="{% url 'bookstore' %}">Books Category</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <div class="lightDark">
+                <div class="light-darskBg"></div>
+                <i id="light" class="bx bx-sun"></i>
+                <i id="dark" class="bx bxs-sun"></i>
+            </div>
+        </ul>
+    </nav>
+    <section>
+        <div class="textMe">
+            <h2 class="namee">I'm Salimov <span>Aziz</span></h2>
+
+            <p class="aboutMe">
+                To get information about our online store, please click the HELP button author: AzizSalimov
+            </p>
+
+{#            <button class="clickWhite">My books</button>#}
+
+            <button class="clickWhite" onclick="location.href='bookstore'">My books</button>
+{#            <a class="clickWhite" href="{% url 'bookstore'%}" role="button">Link</a>#}
+        </div>
+        <div class="imgMe">
+            <div class="bg"></div>
+            <img src="/static/Снимок%20экрана%20от%202023-04-14%2010-30-40.png" alt=""/>
+        </div>
+    </section>
+    <footer>
+        <div class="icons" id="iconid">
+            <a href="https://t.me/valiyevkh_portfolio"><i class='bx bxl-telegram'></i></a>
+            <a href="https://www.instagram.com/invites/contact/?i=1xf54wcisupwe&utm_content=n44epbd"><i
+                    class='bx bxl-instagram'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100086605887872&mibextid=LQQJ4d"><i
+                    class='bx bxl-facebook-circle'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+        </div>
+
+    </footer>
+</div>
+</body>
+<script src="./main.js"></script>
+</html>

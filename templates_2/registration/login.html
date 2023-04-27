@@ -1,0 +1,75 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block title %}Log In{% endblock title %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#<h3>Log In</h3>#}
+{##}
+{#<form method = "post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button type = "submit" class = 'btn btn-success'>Log In</button>#}
+{#    <a class = "btn btn-outline-info" href = "{% url 'signup' %}" role = "button">Create Account</a>#}
+{#</form>#}
+{##}
+{##}
+{##}
+{##}
+{#{% endblock content %}#}
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+<div id="bg"></div>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title mb-4">Log In</h3>
+
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Log In</button>
+              <a class="btn btn-outline-info" href="{% url 'signup' %}" role="button">Create Account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block styles %}
+<style>
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://your-image-url.com");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+  }
+
+  .card {
+    margin-top: -60px;
+    z-index: 1;
+  }
+</style>
+{% endblock styles %}
